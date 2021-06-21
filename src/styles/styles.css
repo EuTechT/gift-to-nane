@@ -1,0 +1,145 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+}
+
+html {
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #4c3549;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+
+    background-image: url("../images/diluc.png");
+
+    position: relative;
+}
+
+.text {
+    overflow: hidden;
+    font-size: 0.8rem;
+    line-height: 1.75;
+    white-space: nowrap;
+
+    animation: text 3s linear;
+    position: relative;
+}
+
+@keyframes text {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 282px;
+    }
+}
+
+.text::after {
+    content: "";
+    width: 1px;
+    height: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    animation: blinkCursor 500ms infinite normal;
+}
+
+@keyframes blinkCursor {
+    0%{
+        background-color: #000;
+    }
+    100%{
+        background-color: transparent;
+    }  
+}
+
+.btn-open-gift {
+    width: 105px;
+    height: 100px;
+    position: absolute;
+    bottom: 14px;
+    left: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.modal {
+    visibility: hidden;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 10;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transition: visibility 0.3s ease-in, opacity 0.3s ease-in;
+}
+
+.modal--active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    width: 400px;
+    height: 80vh;
+    background-image: url("../images/paper.png");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content p {
+    width: 50%;
+    font-size: 1rem;
+    text-align: justify;
+    line-height: 1.75;
+    user-select: none;
+}
+
+.heart {
+    font-size: 2rem;
+    user-select: none;
+    margin-top: 2rem;
+}
+
+.btn-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+}
