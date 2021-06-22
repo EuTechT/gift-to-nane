@@ -9,5 +9,3 @@ btnOpenGift.addEventListener('click', (event) => {
 btnClose.addEventListener('click', (event) => {
     modal.classList.remove('modal--active');
 });
-
-const audio = window.document.querySelector('.audio').play();
