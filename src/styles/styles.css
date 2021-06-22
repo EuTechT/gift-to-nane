@@ -35,6 +35,7 @@ body {
     font-size: 0.8rem;
     line-height: 1.75;
     white-space: nowrap;
+    color: #000;
 
     animation: text 3s linear;
     position: relative;
@@ -129,7 +130,7 @@ body {
 }
 
 .heart {
-    font-size: 2rem;
+    height: 40px;
     user-select: none;
     margin-top: 2rem;
 }
